@@ -28,8 +28,8 @@ jobs:
 
       - name: Copy Ascend source into the scaffold
         run: |
-          cp -r lib/* ascend_scaffold/lib/
-          cp pubspec.yaml ascend_scaffold/pubspec.yaml
+          cp -r ascend_app/lib/* ascend_scaffold/lib/
+          cp ascend_app/pubspec.yaml ascend_scaffold/pubspec.yaml
 
       - name: Get dependencies
         working-directory: ascend_scaffold
