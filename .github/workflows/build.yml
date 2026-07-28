@@ -26,6 +26,11 @@ jobs:
       - name: Create a fresh Flutter project scaffold
         run: flutter create --platforms=android ascend_scaffold
 
+      - name: Add internet permission to Android manifest
+        run: |
+          sed -i '/<manifest/a\    <uses-permission android:name="android.permission.INTERNET"/>' ascend_scaffold/android/app/src/main/AndroidManifest.xml
+          cat ascend_scaffold/android/app/src/main/AndroidManifest.xml
+
       - name: Copy Ascend source into the scaffold
         run: |
           cp -r ascend_app/lib/* ascend_scaffold/lib/
